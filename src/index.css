@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@200;300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0F0F0F;
+  --color-surface: #141414;
+  --color-surface-dim: #0F0F0F;
+  --color-surface-bright: #1A1A1A;
+  --color-surface-container: #1A1A1A;
+  --color-surface-container-high: #222222;
+  --color-surface-container-highest: #2A2A2A;
+  
+  --color-on-surface: #E5E5E1;
+  --color-on-surface-variant: rgba(229, 229, 225, 0.6);
+  
+  --color-primary: #C5A48A;
+  --color-on-primary: #0F0F0F;
+  --color-primary-container: #C5A48A;
+  --color-on-primary-container: #0F0F0F;
+  
+  --color-secondary: #E5E5E1;
+  --color-secondary-container: #2A2A2A;
+  
+  --color-error: #FF4D4D;
+  --color-error-container: #331111;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+  
+  h1, h2, h3, .serif {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .border-soft {
+    border-color: rgba(229, 229, 225, 0.15);
+  }
+  
+  .massive-text {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .label-tracking {
+    @apply font-sans uppercase font-bold tracking-[0.4em] text-[10px];
+  }
+}
